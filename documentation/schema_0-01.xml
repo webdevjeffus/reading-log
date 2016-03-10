@@ -32,7 +32,7 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="52" y="78" name="coaches">
+</datatypes><table x="108" y="79" name="users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -51,24 +51,6 @@
 <row name="password_digest" null="1" autoincrement="0">
 <datatype>MEDIUMTEXT</datatype>
 <default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="346" y="81" name="readers">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="roster_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="rosters" row="id" />
-</row>
-<row name="username" null="1" autoincrement="0">
-<datatype>MEDIUMTEXT</datatype>
-<default>NULL</default></row>
-<row name="password" null="1" autoincrement="0">
-<datatype>MEDIUMTEXT</datatype>
-<default>NULL</default></row>
 <row name="reading_level" null="1" autoincrement="0">
 <datatype>MEDIUMTEXT</datatype>
 <default>NULL</default></row>
@@ -76,7 +58,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="648" y="211" name="entries">
+<table x="657" y="322" name="entries">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -91,20 +73,20 @@
 <row name="pages_read" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="read_at" null="1" autoincrement="0">
+<row name="read_on" null="1" autoincrement="0">
 <datatype>DATE</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="210" y="78" name="rosters">
+<table x="462" y="57" name="rosters">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="coach_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="coaches" row="id" />
+<default>NULL</default><relation table="users" row="id" />
 </row>
 <row name="name" null="1" autoincrement="0">
 <datatype>MEDIUMTEXT</datatype>
@@ -113,13 +95,13 @@
 <part>id</part>
 </key>
 </table>
-<table x="493" y="82" name="logs">
+<table x="645" y="196" name="logs">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="reader_id" null="1" autoincrement="0">
+<row name="rosters_user_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="readers" row="id" />
+<default>NULL</default><relation table="rosters_users" row="id" />
 </row>
 <row name="name" null="1" autoincrement="0">
 <datatype>MEDIUMTEXT</datatype>
@@ -209,6 +191,25 @@
 <default>NULL</default></row>
 <row name="location" null="1" autoincrement="0">
 <datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="271" y="144" name="rosters_users">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="roster_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="rosters" row="id" />
+</row>
+<row name="reader_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="users" row="id" />
+</row>
+<row name="reading_level" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
