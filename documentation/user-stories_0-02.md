@@ -10,6 +10,7 @@
 * create, read, update and delete reader accounts for my student, assigning each reader a username, password and reading level.
 * remove readers from a roster, or reassign them to another roster.
 * view each reader's individual reading logs, setting start and finish dates for readings displayed.
+
 #### Stretch
 * create a standing reading assignment for all readers in a given roster.
 * create special reading assignments for all readers, small groups, or individual readers.
@@ -21,6 +22,7 @@
 * log into my reading log account using the username and password assigned by my coach.
 * view my own reading logs, selecting the start and finish dates for readings displayed.
 * add entries to my log, entering the book, the pages read, and the date of the reading.
+
 #### Stretch
 * view standing and special reading assignments made by my coach.
 * send confidential direct messages to and receive them from my coach.
