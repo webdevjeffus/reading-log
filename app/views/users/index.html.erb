@@ -1,0 +1,6 @@
+<h1>Users (Teachers, Parents, and Coaches)</h1>
+<ul>
+  <% @users.each do |user| %>
+    <li class="index-links"> <%= link_to "#{user.username}", user_path(id: user.id) %> </li>
+  <% end %>
+</ul>

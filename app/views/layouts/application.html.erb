@@ -2,13 +2,45 @@
 <html>
 <head>
   <title>ReadingLog</title>
+  <link href='https://fonts.googleapis.com/css?family=Bangers|Open+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+<body>
+  <header>
+    <% if current_user %>
+      <h1><%= link_to 'Reading Log', user_path(id: current_user.id) %></h1>
+    <% else %>
+      <h1><%= link_to 'Reading Log', root_path%></h1>
+    <% end %>
+    <nav>
+      <ul>
+        <% if current_user %>
+          <li class="nav-menu">Welcome, <%= link_to current_user.username, user_path(current_user) %>!</li>
+          <li class="nav-menu"><%= link_to 'Log Out', session_path(current_user), method: :delete %> </li>
+        <% else %>
+          <li class="nav-menu"><%= link_to 'Sign Up', new_user_path %></li>
+          <li class="nav-menu"><%= link_to 'Log In', new_session_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <% flash.each do |name, msg| %>
+      <% if msg.is_a?(String) %>
+        <%= content_tag :div, msg, :class => "flash_#{name} error" %>
+      <% end %>
+    <% end %>
+
+    <%= yield %>
+  </main>
+
+  <footer>
+    <p>Created by Jeff George</p>
+  </footer>
 
 </body>
 </html>
