@@ -2,16 +2,18 @@
 <html>
 <head>
   <title>ReadingLog</title>
+  <link href='https://fonts.googleapis.com/css?family=Bangers|Open+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
 </head>
 
 <body>
   <header>
     <% if current_user %>
-      <h1><%= link_to 'ReadingLog', user_path(id: current_user.id) %></h1>
+      <h1><%= link_to 'Reading Log', user_path(id: current_user.id) %></h1>
     <% else %>
-      <h1><%= link_to 'ReadingLog', root_path%></h1>
+      <h1><%= link_to 'Reading Log', root_path%></h1>
     <% end %>
     <nav>
       <ul>
