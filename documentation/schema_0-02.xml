@@ -32,7 +32,7 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="186" y="234" name="coaches">
+</datatypes><table x="208" y="243" name="users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -55,7 +55,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="676" y="241" name="entries">
+<table x="648" y="241" name="entries">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -77,22 +77,25 @@
 <part>id</part>
 </key>
 </table>
-<table x="374" y="169" name="rosters">
+<table x="380" y="173" name="rosters">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="coach_id" null="1" autoincrement="0">
+<row name="user_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="coaches" row="id" />
+<default>NULL</default><relation table="users" row="id" />
 </row>
 <row name="name" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="description" null="1" autoincrement="0">
 <datatype>MEDIUMTEXT</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="837" y="283" name="books">
+<table x="792" y="283" name="books">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -120,7 +123,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="1179" y="202" name="authors">
+<table x="1113" y="145" name="creators">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -134,23 +137,23 @@
 <part>id</part>
 </key>
 </table>
-<table x="988" y="201" name="authors_books">
+<table x="937" y="103" name="authors">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="author_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="authors" row="id" />
-</row>
 <row name="book_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="books" row="id" />
+</row>
+<row name="creator_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="creators" row="id" />
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="987" y="318" name="genres">
+<table x="937" y="326" name="genres">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -164,7 +167,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="989" y="425" name="publisher">
+<table x="935" y="432" name="publisher">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -178,13 +181,13 @@
 <part>id</part>
 </key>
 </table>
-<table x="376" y="304" name="readers">
+<table x="377" y="310" name="readers">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="coach_id" null="1" autoincrement="0">
+<row name="user_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="coaches" row="id" />
+<default>NULL</default><relation table="users" row="id" />
 </row>
 <row name="username" null="1" autoincrement="0">
 <datatype>MEDIUMTEXT</datatype>
@@ -205,7 +208,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="536" y="262" name="logs">
+<table x="524" y="262" name="logs">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -221,4 +224,22 @@
 <part>id</part>
 </key>
 </table>
+<table x="937.0000029140049" y="215.22222281091013" name="illustrators">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="book_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="books" row="id" />
+</row>
+<row name="creator_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="creators" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
 </sql>
+
+
