@@ -55,7 +55,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="648" y="241" name="entries">
+<table x="644" y="246" name="entries">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -95,7 +95,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="792" y="283" name="books">
+<table x="786" y="237" name="books">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -208,7 +208,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="524" y="262" name="logs">
+<table x="524" y="245" name="logs">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -220,6 +220,9 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="readers" row="id" />
 </row>
+<row name="comment" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
@@ -241,5 +244,3 @@
 </key>
 </table>
 </sql>
-
-
