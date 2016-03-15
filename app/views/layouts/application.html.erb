@@ -11,7 +11,7 @@
 <body>
   <header>
     <% if current_user %>
-      <h1><%= link_to 'Reading Log', user_path(id: current_user.id) %></h1>
+      <h1><%= link_to 'Reading Log', root_path %></h1>
     <% else %>
       <h1><%= link_to 'Reading Log', root_path%></h1>
     <% end %>
