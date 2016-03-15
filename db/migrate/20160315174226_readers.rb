@@ -8,8 +8,8 @@ class Readers < ActiveRecord::Migration
 
                     # Optional fields; users not required to provide them
       t.string      :reading_level, limit: 12
-      t.string      :firstname, null: false, limit: 24
-      t.string      :lastname, null: false, limit: 24
+      t.string      :firstname, limit: 24
+      t.string      :lastname, limit: 24
 
       t.timestamps  null: false
     end
