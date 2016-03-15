@@ -1,6 +1,6 @@
 class Readers < ActiveRecord::Migration
   def change
-    create_table :users do |t|
+    create_table :readers do |t|
       t.string      :username,  null: false, unique: true, limit: 20
       t.string      :password, limit: 20 # Reader passwords are not secure by design,
                           # so the owning user can view and edit them directly
