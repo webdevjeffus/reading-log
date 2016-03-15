@@ -1,6 +1,6 @@
-class Readers < ActiveRecord::Base
-  belongs_to  :rosters
-  belongs_to  :readers
+class Log < ActiveRecord::Base
+  belongs_to  :roster
+  belongs_to  :reader
   has_many    :entries
 
   # Required fields
@@ -8,6 +8,6 @@ class Readers < ActiveRecord::Base
   validates :reader, presence: true
 
   # Optional fields
-  validates :comment, length: {in: 1..255}
+  validates :comment, length: {maximum: 255}
 
 end

@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20160315191949) do
     t.string   "password",      limit: 20
     t.integer  "user_id",                  null: false
     t.string   "reading_level", limit: 12
-    t.string   "firstname",     limit: 24, null: false
-    t.string   "lastname",      limit: 24, null: false
+    t.string   "firstname",     limit: 24
+    t.string   "lastname",      limit: 24
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end

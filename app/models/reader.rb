@@ -3,8 +3,8 @@ class Reader < ActiveRecord::Base
   has_many  :logs
 
   # Required fields
-  validates :username, presence: true, length: {in: 4..20}
-  validates :password, presence: true, length: {in: 4..20}
+  validates :username, presence: true, length: {in: 3..20}
+  validates :password, presence: true, length: {in: 3..20}
   validates :user, presence: true
 
   # Optional fields
