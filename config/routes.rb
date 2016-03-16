@@ -60,6 +60,8 @@ Rails.application.routes.draw do
     resources :rosters, only: [ :index, :show, :new, :create ]
   end
 
+  resources :readers, only: [ :index, :show, :new, :create ]
+  resources :rosters, only: [ :index, :show, :new, :create ]
   resource :logs, only: [ :show ]
 
   resources :sessions, only: [ :new, :create, :destroy ]
