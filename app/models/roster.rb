@@ -1,6 +1,7 @@
 class Roster < ActiveRecord::Base
   belongs_to  :user
   has_many    :logs
+  has_many    :readers, through: :logs
 
   validates   :user, presence: true
   validates   :name, presence: true, length: { in: 4..50}

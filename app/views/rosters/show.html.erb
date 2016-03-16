@@ -1,0 +1,13 @@
+<h1>Roster: <%= @roster.name %></h1>
+
+<p>Reading Coach: <%= current_user.username %></p>
+
+<p><i><%= @roster.description %></i></p>
+
+<ul>
+  <% @roster.readers.each do |reader| %>
+    <li><b>Reader: <%= reader.name %></b><% if reader.name? %>, Username: "<%= reader.username %>"<% end %></li>
+  <% end %>
+</ul>
+
+<p>Return to <%= link_to 'Rosters Index', user_rosters_path(id: @roster.user_id) %>.</p>
