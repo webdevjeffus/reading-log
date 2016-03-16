@@ -15,6 +15,17 @@ class ReadersController < ApplicationController
     @reader = @user.readers.new
   end
 
+  def create
+    @user = User.find_by(id: params[:user_id])
+    @reader = @user.readers.build(reader_params)
+    if @reader.save
+      redirect_to user_reader_path(id: @reader.id)
+    else
+      @errors = @reader.errors.full_messages
+      render new_user_reader_path
+    end
+  end
+
 
   private
 
