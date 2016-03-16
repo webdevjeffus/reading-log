@@ -1,0 +1,35 @@
+<% if @reader.firstname || @reader.lastname %>
+  <h1>Reader:
+    <% if @reader.firstname %>
+      <%= " " + @reader.firstname %>
+    <% end %>
+    <% if " " + @reader.lastname %>
+      <%= @reader.lastname %>
+    <% end %>
+  </h1>
+<% else %>
+  <h1>Reader "<%= @reader.username %>"</h1>
+<% end %>
+
+<p>Username: "<%= @reader.username %>"</p>
+
+<p>Password: <%= @reader.password %></p>
+
+<% if @reader.firstname || @reader.lastname %>
+  <p>Name:
+    <% if @reader.firstname %>
+      <%= " " + @reader.firstname %>
+    <% end %>
+    <% if " " + @reader.lastname %>
+      <%= @reader.lastname %>
+    <% end %>
+  </p>
+<% end %>
+
+<% if @reader.reading_level %>
+  <p>Reading Level:
+    <%= " " + @reader.reading_level %>
+  </p>
+<% end %>
+
+Return to <%= link_to 'Readers Index', user_readers_path(id: @reader.user_id) %>
