@@ -57,6 +57,7 @@ Rails.application.routes.draw do
   resources :users, only: [ :new, :show, :create, :index ]
   resources :users do
     resources :readers, only: [ :index, :show, :new, :create ]
+    resources :rosters, only: [ :index, :show, :new, :create ]
   end
 
   resources :sessions, only: [ :new, :create, :destroy ]
