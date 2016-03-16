@@ -120,7 +120,7 @@ pete = Reader.create!(
 quentin = Reader.create!(
   username: 'q_tip',
   password: 'password',
-  user: mustard,
+  user: scarlet,
   reading_level: 'T',
   firstname: 'Quentin',
   lastname: 'Quinn'
@@ -129,7 +129,7 @@ quentin = Reader.create!(
 rachel = Reader.create!(
   username: 'rachel_rocks',
   password: 'password',
-  user: mustard,
+  user: scarlet,
   reading_level: 'S',
   firstname: 'Rachel',
   lastname: 'Ross'

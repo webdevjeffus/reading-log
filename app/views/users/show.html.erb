@@ -1,6 +1,8 @@
 <h1>Welcome, <%= @user.username %>!</h1>
 
 <p>You are <%= @user.firstname + " " + @user.lastname %>.</p>
-<p>Your registered email is <%= @user.email %></p>
+<p>Your registered email is <%= @user.email %>.</p>
 
-<p>View a list of all registered <%= link_to 'Reading Coaches', users_path %></p>.
+<p>View your <%= link_to 'Readers', user_readers_path(user_id: params[:id]) %>.</p>
+
+<p>View a list of all registered <%= link_to 'Reading Coaches', users_path %>.</p>
