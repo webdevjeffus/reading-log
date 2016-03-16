@@ -10,6 +10,17 @@ class ReadersController < ApplicationController
     @reader = Reader.find_by(id: params[:id])
   end
 
+  def new
+    @user = User.find_by(id: params[:user_id])
+    @reader = @user.readers.new
+  end
+
+
+  private
+
+  def reader_params
+    reader_params = params.require(:reader).permit(:firstname, :lastname, :username, :reading_level, :password)
+  end
 
 
 end

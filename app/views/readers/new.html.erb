@@ -1,0 +1,35 @@
+<%= form_for( [@user, @reader ] ) do |f| %>
+  <fieldset id="form">
+    <div class="input-options">
+      <%= f.label :username, 'Username (required): ' %>
+      <%= f.text_field :username, minlength: 3, maxlength: 20 %>
+    </div>
+    <div class="input-options">
+      <%= f.label :password, 'Password (required): ' %>
+      <%= f.password_field :password, minlength: 3, maxlength: 20 %>
+      <%#= f.label :password_confirmation %>
+      <%#= f.password_field :password_confirmation %>
+    </div>
+    <div class="input-options">
+      <%= f.label :firstname, 'First name: ' %>
+      <%= f.text_field :firstname, :minlength => 2 %>
+    </div>
+    <div class="input-options">
+      <%= f.label :lastname, 'Last name: ' %>
+      <%= f.text_field :lastname, :minlength => 1 %>
+    </div>
+    <div class="input-options">
+      <%= f.label :reading_level, 'Reading level: ' %>
+      <%= f.text_field :reading_level, minlength: 1, maxlength: 12 %>
+    </div>
+    <div class="form-button">
+    <%= f.submit 'Create Reader', class: 'button-user' %>
+    </div>
+  </fieldset>
+<% end %>
+
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <p class="error"><%= error %></p>
+  <% end %>
+<% end %>
