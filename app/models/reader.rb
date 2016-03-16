@@ -8,8 +8,8 @@ class Reader < ActiveRecord::Base
   validates :user, presence: true
 
   # Optional fields
-  validates :reading_level, length: {in: 1..12}
-  validates :firstname, length: {in: 2..24}
+  validates :reading_level, allow_nil: true, length: {in: 1..12}
+  validates :firstname, allow_nil: true, length: {in: 2..24}
   validates :lastname, allow_nil: true, length: {in: 1..24}
 
 end
