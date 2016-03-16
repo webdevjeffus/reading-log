@@ -6,8 +6,8 @@
 
 <ul>
   <% @roster.readers.each do |reader| %>
-    <li><b>Reader: <%= reader.name %></b><% if reader.name? %>, Username: "<%= reader.username %>"<% end %></li>
+    <li><b>Reader: <%= reader.name %></b><% if reader.name? %>, Username: "<%= reader.username %>"<% end %> <%= link_to 'Reader', reader_path(id: reader.id) %> | <%= link_to 'Log', logs_path(reader_id: reader.id, roster_id: @roster.id) %></li>
   <% end %>
 </ul>
 
-<p>Return to <%= link_to 'Rosters Index', user_rosters_path(id: @roster.user_id) %>.</p>
+<p>Return to <%= link_to 'Rosters Index', rosters_path(id: @roster.id) %>.</p>
