@@ -60,6 +60,8 @@ Rails.application.routes.draw do
     resources :rosters, only: [ :index, :show, :new, :create ]
   end
 
+  resource :logs, only: [ :show ]
+
   resources :sessions, only: [ :new, :create, :destroy ]
 
   root 'welcome#index'
