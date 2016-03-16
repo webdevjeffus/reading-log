@@ -32,4 +32,5 @@
   </p>
 <% end %>
 
-<p>Return to <%= link_to 'Readers Index', user_readers_path(id: @reader.user_id) %>.</p>
+<%# binding.pry %>
+<p>Return to <%= link_to 'Readers Index', user_readers_path(id: @reader.id, user_id: @user.id) %>.</p>
