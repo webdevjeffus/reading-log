@@ -15,16 +15,16 @@ class RostersController < ApplicationController
     @roster = @user.rosters.new
   end
 
-  # def create
-  #   @user = User.find_by(id: params[:user_id])
-  #   @reader = @user.readers.build(reader_params)
-  #   if @reader.save
-  #     redirect_to user_reader_path(id: @reader.id)
-  #   else
-  #     @errors = @reader.errors.full_messages
-  #     render new_user_reader_path
-  #   end
-  # end
+  def create
+    @user = User.find_by(id: params[:user_id])
+    @roster = @user.rosters.build(roster_params)
+    if @roster.save
+      redirect_to user_roster_path(id: @roster.id)
+    else
+      @errors = @roster.errors.full_messages
+      render new_user_roster_path
+    end
+  end
 
 
   private
