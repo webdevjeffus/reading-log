@@ -5,10 +5,10 @@ class RostersController < ApplicationController
     @rosters = @user.rosters.order(:name)
   end
 
-  # def show
-  #   @user = User.find_by(id: params[:user_id])
-  #   @reader = Reader.find_by(id: params[:id])
-  # end
+  def show
+    @user = User.find_by(id: params[:user_id])
+    @roster = Roster.includes(:readers).find_by(id: params[:id])
+  end
 
   # def new
   #   @user = User.find_by(id: params[:user_id])
