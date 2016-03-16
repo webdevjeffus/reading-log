@@ -1,0 +1,6 @@
+<h1>Your Readers</h1>
+<ul>
+  <% @readers.each do |user| %>
+    <li class="index-links"> <%= link_to "#{user.username}", user_path(id: user.id) %> </li>
+  <% end %>
+</ul>
