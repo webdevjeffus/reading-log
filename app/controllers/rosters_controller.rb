@@ -10,10 +10,10 @@ class RostersController < ApplicationController
     @roster = Roster.includes(:readers).find_by(id: params[:id])
   end
 
-  # def new
-  #   @user = User.find_by(id: params[:user_id])
-  #   @reader = @user.readers.new
-  # end
+  def new
+    @user = User.find_by(id: params[:user_id])
+    @roster = @user.rosters.new
+  end
 
   # def create
   #   @user = User.find_by(id: params[:user_id])
