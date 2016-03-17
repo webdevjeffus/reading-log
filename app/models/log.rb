@@ -1,6 +1,7 @@
 class Log < ActiveRecord::Base
   belongs_to  :roster
   belongs_to  :reader
+  belongs_to  :user, through: :roster
   has_many    :entries
 
   # Required fields
