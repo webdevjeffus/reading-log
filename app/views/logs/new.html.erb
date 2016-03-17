@@ -1,0 +1,22 @@
+<%= form_for @log do |f| %>
+  <fieldset id="form">
+    <p>Roster: <%= @roster.name %></p>
+    <div class="input-options">
+      <%= f.label :reader, 'Reader username (required): ' %>
+      <%= f.text_field :reader %>
+    </div>
+    <div class="input-options">
+      <%= f.label :comment, 'Comment (optional): ' %>
+      <%= f.text_area :comment %>
+    </div>
+    <div class="form-button">
+      <%= f.submit 'Create Roster', class: 'button-user' %>
+    </div>
+  </fieldset>
+<% end %>
+
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <p class="error"><%= error %></p>
+  <% end %>
+<% end %>

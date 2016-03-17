@@ -6,8 +6,11 @@ class LogsController < ApplicationController
   end
 
   def new
-    @reader = Reader.find_by(id: params[:reader_id])
+    binding.pry
     @roster = Roster.find_by(id: params[:roster_id])
+    @log = @roster.logs.new
   end
+
+
 
 end
