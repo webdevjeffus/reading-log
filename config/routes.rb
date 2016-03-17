@@ -62,7 +62,7 @@ Rails.application.routes.draw do
 
   resources :readers, only: [ :index, :show, :new, :create ]
   resources :rosters, only: [ :index, :show, :new, :create ]
-  resource :logs, only: [ :show ]
+  resource :logs, only: [ :show, :new, :create ]
 
   resources :sessions, only: [ :new, :create, :destroy ]
 

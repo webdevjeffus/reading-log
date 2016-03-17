@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many  :rosters
   has_many  :readers
+  has_many  :logs, through: :rosters
 
   validates :firstname, presence: true, length: {in: 2..24}
   validates :lastname, presence: true, length: {in: 1..24}

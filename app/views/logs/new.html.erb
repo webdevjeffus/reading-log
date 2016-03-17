@@ -1,0 +1,32 @@
+<h1>Add a Reader to "<%= @roster.name %>"</h1>
+
+<% if @readers.count == 0 %>
+  <p>You have no readers available to assign to this roster.</p>
+  <p>Add <%= link_to 'Readers', new_user_reader_path(user_id: @roster.user_id) %> and then return to this roster.</p>
+<% else %>
+  <%= form_for @log do |f| %>
+    <fieldset id="form">
+      <%= f.hidden_field( :roster_id ) %>
+      <h3>Select a Reader to add:</h3>
+        <% @readers.each do |reader| %>
+          <div class="input-options">
+            <%= radio_button_tag(:reader_id, reader.id) %>
+            <%= label_tag(:reader_name, reader.username) %>
+          </div>
+      <% end %>
+      <div class="input-options">
+        <%= f.label :comment, 'Comment (optional): ' %>
+        <%= f.text_area :comment %>
+      </div>
+      <div class="form-button">
+        <%= f.submit 'Add Reader to Roster', class: 'button-user' %>
+      </div>
+    </fieldset>
+  <% end %>
+<% end %>
+
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <p class="error"><%= error %></p>
+  <% end %>
+<% end %>
