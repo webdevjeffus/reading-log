@@ -12,4 +12,4 @@
 
 <p>Add a <%= link_to 'new Reader', new_logs_path(roster_id: @roster.id) %> to this roster.</p>
 
-<p>Return to <%= link_to 'Rosters Index', rosters_path(id: @roster.id) %>.</p>
+<p>Return to <%= link_to 'Rosters Index', rosters_path(user_id: @roster.user_id) %>.</p>

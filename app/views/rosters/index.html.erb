@@ -1,8 +1,8 @@
 <h1>Your Rosters</h1>
 <ul>
   <% @rosters.each do |roster| %>
-    <li class="index-links"> <%= link_to "#{roster.name}", user_roster_path(id: roster.id) %></li>
+    <li> <%= link_to "#{roster.name}", user_roster_path(user_id: roster.user_id, id: roster.id) %></li>
   <% end %>
 </ul>
 
-<p>Add a <%= link_to 'new Roster', new_user_roster_path(id: @user.id) %>.</p>
+<p>Add a <%= link_to 'new Roster', new_user_roster_path(user_id: current_user.id) %>.</p>
