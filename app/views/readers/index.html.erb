@@ -1,9 +1,9 @@
 <h1>Your Readers</h1>
 <ul>
   <% @readers.each do |reader| %>
-    <li class="index-links"> <%= link_to "#{reader.username}", user_reader_path(id: reader.id) %> </li>
+    <li> <%= link_to "#{reader.username}", reader_path(id: reader.id) %> </li>
   <% end %>
 </ul>
 
-<p>Add a <%= link_to 'new Reader', new_user_reader_path(id: @user.id) %>.</p>
+<p>Add a <%= link_to 'new Reader', new_reader_path %>.</p>
 
