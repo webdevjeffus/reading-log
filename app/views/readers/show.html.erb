@@ -32,5 +32,12 @@
   </p>
 <% end %>
 
-<%# binding.pry %>
+<h2><%= @reader.name %>'s Logs</h2>
+
+<ul>
+  <% @reader.logs.each do |log| %>
+    <li><%= link_to log.roster.name, logs_path(id: log.id) %></li>
+  <% end %>
+</ul>
+
 <p>Return to <%= link_to 'Readers Index', user_readers_path(id: @reader.id, user_id: @user.id) %>.</p>

@@ -7,7 +7,7 @@ class ReadersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:user_id])
-    @reader = Reader.find_by(id: params[:id])
+    @reader = Reader.includes(:logs).find_by(id: params[:id])
   end
 
   def new
