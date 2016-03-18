@@ -19,10 +19,10 @@ class ReadersController < ApplicationController
     @user = current_user
     @reader = @user.readers.build(reader_params)
     if @reader.save
-      redirect_to user_reader_path(id: @reader.id)
+      redirect_to reader_path(id: @reader.id)
     else
       @errors = @reader.errors.full_messages
-      render new_user_reader_path
+      render new_reader_path
     end
   end
 
