@@ -1,8 +1,11 @@
 class LogsController < ApplicationController
 
   def show
-    @user = User.find_by(id: params[:user_id])
-    @log = Log.find_by(reader_id: params[:reader_id], roster_id: params[:roster_id])
+    if params[:reader_id] && params[:roster_id]
+      @log = Log.find_by(reader_id: params[:reader_id], roster_id: params[:roster_id])
+    else
+      @log = Log.find_by(id: params[:id])
+    end
   end
 
   def new

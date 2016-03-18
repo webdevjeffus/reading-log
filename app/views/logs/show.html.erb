@@ -2,5 +2,6 @@
 
 <p>Reader: <%= @log.reader.name %></p>
 <p>Roster: <%= @log.roster.name %></p>
+<p>Comment: <i><%= @log.comment %></i></p>
 
-<p>Return to <%= link_to 'Reader', reader_path(id: @log.reader_id, user_id: @log.reader.user_id) %> | <%= link_to 'Roster', roster_path(id: @log.roster_id) %>
+<p>Return to <%= link_to 'Reader', reader_path(id: @log.reader_id) %> | <%= link_to 'Roster', roster_path(id: @log.roster_id) %>

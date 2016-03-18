@@ -1,4 +1,4 @@
-<%= form_for( [@user, @reader ] ) do |f| %>
+<%= form_for @reader do |f| %>
   <fieldset id="form">
     <div class="input-options">
       <%= f.label :username, 'Username (required): ' %>
@@ -23,7 +23,7 @@
       <%= f.text_field :reading_level, minlength: 1, maxlength: 12 %>
     </div>
     <div class="form-button">
-    <%= f.submit 'Create Reader', class: 'button-user' %>
+      <%= f.submit 'Create Reader' %>
     </div>
   </fieldset>
 <% end %>

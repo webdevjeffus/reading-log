@@ -55,16 +55,12 @@ Rails.application.routes.draw do
   #   end
 
   resources :users, only: [ :new, :show, :create, :index ]
-  # resources :users do
-  #   resources :readers, only: [ :index, :show, :new, :create ]
-  #   resources :rosters, only: [ :index, :show, :new, :create ]
-  # end
+  resources :sessions, only: [ :new, :create, :destroy ]
 
   resources :readers, only: [ :index, :show, :new, :create ]
   resources :rosters, only: [ :index, :show, :new, :create ]
   resource :logs, only: [ :show, :new, :create ]
 
-  resources :sessions, only: [ :new, :create, :destroy ]
 
   root 'welcome#index'
 
