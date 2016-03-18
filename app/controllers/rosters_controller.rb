@@ -6,12 +6,12 @@ class RostersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id: params[:user_id])
     @roster = Roster.includes(:readers).find_by(id: params[:id])
+    @user = @roster.user
   end
 
   def new
-    @user = User.find_by(id: params[:user_id])
+    @user = current_user
     @roster = @user.rosters.new
   end
 
