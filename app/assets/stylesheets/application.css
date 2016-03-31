@@ -11,8 +11,7 @@
  * file per style scope.
  *
  *
- *= require normalize
- *= require drop-in.css
+ *= require drop-in-og
  *
  *= require_tree .
  *= require_self
